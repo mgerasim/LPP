@@ -33,7 +33,11 @@ namespace LPP.Bot.Handlers
                     new[]
                     {
                         InlineKeyboardButton.WithCallbackData("Список пользователей", HandlerConstant.GetUsersCmd),
-                    },                    
+                    },
+                    new []  
+                    {
+                        InlineKeyboardButton.WithCallbackData("📢 Отправить сообщение участникам 🔔", HandlerConstant.SendMessageToSpeakers),
+                    },
                 });
 
             await this.userState.BotClient.DeleteMessage(this.userState.ChatId, this.userState.Update.Message.Id);

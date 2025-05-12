@@ -15,7 +15,8 @@ namespace LPP.DAL
 
                     options.EnableSensitiveDataLogging(true);
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                }
+                },
+    ServiceLifetime.Transient
             );
         }
     }

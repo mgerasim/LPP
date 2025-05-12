@@ -22,7 +22,12 @@ namespace LPP.Bot.Handlers
                                         },
                                         new KeyboardButton[]
                                         {
-                                            new KeyboardButton(HandlerConstant.ShowSchemes),
+                                            new KeyboardButton(HandlerConstant.ShowMedia),
+                                            new KeyboardButton(HandlerConstant.ShowContacts),
+                                        },
+                                        new KeyboardButton[]
+                                        {
+                                            new KeyboardButton(HandlerConstant.SeeMain),
                                         },
                                     };
 

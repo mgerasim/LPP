@@ -4,7 +4,7 @@
     {
         public static string AdminMenu = "⚙️ Администрирование 🔧";
 
-        public static string ShowProgram = "📅 Программа конкурса";
+        public static string ShowProgram = "📅 Программа";
 
         public static string DeleteBook = "🗑 Удалить книгу";
 
@@ -37,7 +37,12 @@
         public static string ExcelBookListQuery { get; internal set; } = "ExcelBookListQuery";
         public static string Byliner { get; internal set; } = "Byliner";
         public static string AboutCompetition { get; internal set; } = "AboutLpp";
-        public static string? ShowNews { get; internal set; } = "📰 Новости конкурса";
+        public static string? ShowNews { get; internal set; } = "📰 Новости";
         public static string ShowSchemes { get; internal set; } = "📜 Схемы конкурса";
+        public static string AdministrationSendMessageCmd { get; internal set; } = "AdministrationSendMessageCmd";
+        public static string SendMessageToSpeakers { get; internal set; } = "SendMessageToSpeakers";
+        public static string ShowMedia { get; internal set; } = "📹 Медиа";
+        public static string ShowContacts { get; internal set; } = "☎️ Контакты";
+        public static string SeeMain { get; internal set; } = "📍  Увидеть главное";
     }
 }

@@ -66,6 +66,10 @@ namespace LPP.Bot.Core
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationCommand(), cancellationToken);
                 }
+                else if (userState.ServiceProvider.GetRequiredService<CurrentUserState>().UserState.State == HandlerConstant.AdministrationSendMessageCmd)
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationSendMessageCommand(), cancellationToken);
+                }
             }
             else if (update.CallbackQuery is { } callbackQuery)
             {
@@ -82,6 +86,16 @@ namespace LPP.Bot.Core
                 else if (update.CallbackQuery.Data == HandlerConstant.GetUsersCmd)
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationUsersCommand(), cancellationToken);
+                }
+                else if (update.CallbackQuery.Data == HandlerConstant.SendMessageToSpeakers)
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationSendMessageCommand(), cancellationToken);
+                }
+                else if (update.CallbackQuery.Data.Contains("messageReaction"))
+                {
+                    await userState.ServiceProvider
+                        .GetRequiredService<IMediator>()
+                        .Send(new MessageReactionCommand(), cancellationToken);
                 }
             }            
         }
