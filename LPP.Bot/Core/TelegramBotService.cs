@@ -62,6 +62,10 @@ namespace LPP.Bot.Core
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new ProgramCommand(), cancellationToken);
                 }
+                else if (message.Text == HandlerConstant.AdminMenu)
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationCommand(), cancellationToken);
+                }
             }
             else if (update.CallbackQuery is { } callbackQuery)
             {
@@ -75,7 +79,11 @@ namespace LPP.Bot.Core
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AboutCompetitionCommand(), cancellationToken);
                 }
-            }
+                else if (update.CallbackQuery.Data == HandlerConstant.GetUsersCmd)
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationUsersCommand(), cancellationToken);
+                }
+            }            
         }
 
         private Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
