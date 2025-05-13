@@ -78,6 +78,10 @@ namespace LPP.Bot.Core
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AttractionsCommand(), cancellationToken);
                 }
+                else if (message.Text == HandlerConstant.SeeMain || message.Text == "/byliner")
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new BylinerCommand(), cancellationToken); 
+                }
                 else if (userState.ServiceProvider.GetRequiredService<CurrentUserState>().UserState.State == HandlerConstant.AdministrationSendMessageCmd)
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationSendMessageCommand(), cancellationToken);

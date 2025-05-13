@@ -103,18 +103,20 @@ namespace LPP.Bot.Handlers
                 );
             }
 
-            var kbrd = new InlineKeyboardMarkup(new InlineKeyboardButton[][]
-               {
-                    new []  {
-                            InlineKeyboardButton.WithCallbackData("🎤 Приветственное слово", HandlerConstant.Byliner),
-                            },
+            var kbrd = new InlineKeyboardMarkup();
 
-                    new[]
-                    {
-                        InlineKeyboardButton.WithCallbackData("🏆 О конкурсе", HandlerConstant.AboutCompetition),
-                    }
-               });
+            if (!this.userState.User.IsBylinerReaded)
+            {
+                kbrd.AddNewRow(new[]
+                {
+                    InlineKeyboardButton.WithCallbackData("🎤 Приветственное слово", HandlerConstant.Byliner)
+                });
+            }
 
+            kbrd.AddNewRow(new[]
+                {
+                    InlineKeyboardButton.WithCallbackData("🏆 О конкурсе", HandlerConstant.AboutCompetition),
+                });
 
             Message sentMessage = await this.userState.BotClient.SendMessage(
                     chatId: this.userState.ChatId,
