@@ -30,10 +30,12 @@ namespace LPP.Bot.Handlers
 
             var keyboardInline = new InlineKeyboardMarkup(new InlineKeyboardButton[][]
                 {
+                    /*
                     new[]
                     {
                         InlineKeyboardButton.WithCallbackData("Список пользователей", HandlerConstant.GetUsersCmd),
                     },
+                    */
                     new []  
                     {
                         InlineKeyboardButton.WithCallbackData("📢 Отправить сообщение участникам 🔔", HandlerConstant.SendMessageToSpeakers),

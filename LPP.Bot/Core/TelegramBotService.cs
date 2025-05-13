@@ -66,6 +66,18 @@ namespace LPP.Bot.Core
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationCommand(), cancellationToken);
                 }
+                else if (message.Text == HandlerConstant.ShowMedia || message.Text == "/media")
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new MediaCommand(), cancellationToken);
+                }
+                else if (message.Text == HandlerConstant.ShowContacts || message.Text == "/contacts")
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new ContactsCommand(), cancellationToken);
+                }
+                else if (message.Text == HandlerConstant.SeeMain || message.Text == "/attractions")
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AttractionsCommand(), cancellationToken);
+                }
                 else if (userState.ServiceProvider.GetRequiredService<CurrentUserState>().UserState.State == HandlerConstant.AdministrationSendMessageCmd)
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationSendMessageCommand(), cancellationToken);

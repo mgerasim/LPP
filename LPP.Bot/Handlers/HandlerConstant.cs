@@ -43,6 +43,6 @@
         public static string SendMessageToSpeakers { get; internal set; } = "SendMessageToSpeakers";
         public static string ShowMedia { get; internal set; } = "📹 Медиа";
         public static string ShowContacts { get; internal set; } = "☎️ Контакты";
-        public static string SeeMain { get; internal set; } = "📍  Увидеть главное";
+        public static string SeeMain { get; internal set; } = "📍 Увидеть Хабаровск";
     }
 }
