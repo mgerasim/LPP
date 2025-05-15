@@ -46,8 +46,13 @@ namespace LPP.Bot.Handlers
 
 Я желаю всем вам продемонстрировать отличные практические навыки и теоретические знания, достойно представить свое предприятие. Успехов вам!
 
+Генеральный директор
+ООО «Транснефть – Дальний Восток»
+В. В. Степанов
+
 ";
 
+            /*
             // Путь к файлу изображения
             var imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", "_stepanov_vitaliy_valerevich.jpg");
 
@@ -63,6 +68,7 @@ namespace LPP.Bot.Handlers
                     parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown
                 );
             }
+            */
 
             var kbrd = new InlineKeyboardMarkup(new InlineKeyboardButton[][]
                {
