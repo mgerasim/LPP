@@ -29,9 +29,31 @@ namespace LPP.Bot.Handlers
 
         public async Task Handle(ProgramCommand request, CancellationToken cancellationToken)
         {
-            string programText = "📅 **Программа конкурса** \n\n" +
-                "Актуальное расписание и полное содержание программы мероприятия доступны на официальном сайте.\n\n" +
-"🔗 Перейти к программе: https://tdv.life/Events";
+            /*
+            // Путь к файлу изображения
+            var imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", "_stepanov_vitaliy_valerevich.jpg");
+
+            if (File.Exists(imagePath))
+            {
+                using var stream = File.OpenRead(imagePath);
+
+                var photo = InputFile.FromStream(stream, "_stepanov_vitaliy_valerevich.jpg");
+
+                await this.userState.BotClient.SendPhoto(
+                    chatId: this.userState.ChatId,
+                    photo,
+                    parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown
+                );
+            }
+            */
+
+            string programText = @"📅 **Программа конкурса** 
+
+Актуальное расписание и полное содержание программы мероприятия доступны:
+
+📎 **Во вложении** — удобно для скачивания и просмотра прямо в боте
+🔗 **На сайте** — по ссылке: https://tdv.life/Events
+";
 
 
             var keyboard = new InlineKeyboardMarkup(new[]
@@ -45,6 +67,18 @@ namespace LPP.Bot.Handlers
                     parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown,
                     replyMarkup: keyboard,
                     cancellationToken: CancellationToken.None);
+
+
+            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", "ПРОГРАММА ЛПП_инет версия.pdf");
+
+            using var stream = File.OpenRead(filePath);
+
+            var file = InputFile.FromStream(stream, "ПРОГРАММА ЛПП_инет версия.pdf");
+
+            await this.userState.BotClient.SendDocument(
+                    chatId: this.userState.ChatId,
+                    document: file,
+                    caption: "Программа конкурса ЛПП 2025 также доступна на сайте: https://tdv.life/Events");
         }
     }
 }

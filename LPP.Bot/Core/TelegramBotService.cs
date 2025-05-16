@@ -62,6 +62,10 @@ namespace LPP.Bot.Core
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new ProgramCommand(), cancellationToken);
                 }
+                else if (message.Text == "/participants" || message.Text == HandlerConstant.ShowParticipants)
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new ParticipantsCommand(), cancellationToken);
+                }
                 else if (message.Text == HandlerConstant.AdminMenu)
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationCommand(), cancellationToken);

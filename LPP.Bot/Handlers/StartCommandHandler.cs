@@ -87,6 +87,7 @@ namespace LPP.Bot.Handlers
 
             await userState.BotClient.SendSticker(
                 chatId: this.userState.ChatId,
+                replyMarkup: keyboard,
                 sticker: "CAACAgIAAxkBAAIHymgmsmu42ozei3DcnpviKoqDyPYWAAJFaAAC1Bk4ScQExV2943heNgQ"
             );
 

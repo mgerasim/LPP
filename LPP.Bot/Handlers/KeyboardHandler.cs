@@ -18,7 +18,7 @@ namespace LPP.Bot.Handlers
                                         new KeyboardButton[]
                                         {
                                             new KeyboardButton(HandlerConstant.ShowProgram),
-                                            //new KeyboardButton(HandlerConstant.ShowNews),
+                                            new KeyboardButton(HandlerConstant.ShowParticipants),
                                         },
                                         new KeyboardButton[]
                                         {

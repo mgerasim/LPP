@@ -25,6 +25,9 @@
     <None Update="images\_stepanov_vitaliy_valerevich.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="images\ПРОГРАММА ЛПП_инет версия.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
