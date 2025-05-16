@@ -1,8 +1,9 @@
 ﻿using LPP.Bot.Core;
 using LPP.DAL.Context;
 using MediatR;
-using Telegram.Bot.Types;
 using Telegram.Bot;
+using Telegram.Bot.Types;
+using Telegram.Bot.Types.ReplyMarkups;
 
 namespace LPP.Bot.Handlers
 {
@@ -28,22 +29,21 @@ namespace LPP.Bot.Handlers
 
         public async Task Handle(ProgramCommand request, CancellationToken cancellationToken)
         {
-            string programText = "📅 **Программа конкурса**\n\n" +
-                "📍 *День 1 – Заезд и регистрация участников*\n" +
-                "• Приветствие\n" +
-                "• Ознакомление с площадками\n\n" +
-                "📍 *День 2 – Практический этап*\n" +
-                "• Соревнования по профессиям\n" +
-                "• Работа экспертных комиссий\n\n" +
-                "📍 *День 3 – Подведение итогов и награждение*\n" +
-                "• Итоговое заседание жюри\n" +
-                "• Торжественная церемония\n\n" +
-                "_Следите за обновлениями — возможны изменения в расписании._";
+            string programText = "📅 **Программа конкурса** \n\n" +
+                "Актуальное расписание и полное содержание программы мероприятия доступны на официальном сайте.\n\n" +
+"🔗 Перейти к программе: https://tdv.life/Events";
+
+
+            var keyboard = new InlineKeyboardMarkup(new[]
+            {
+                new[] { InlineKeyboardButton.WithUrl("📅 Программа", "https://tdv.life/Events") }
+            });
 
             Message sentMessage = await this.userState.BotClient.SendMessage(
                     chatId: this.userState.ChatId,
                     text: programText,
                     parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown,
+                    replyMarkup: keyboard,
                     cancellationToken: CancellationToken.None);
         }
     }
