@@ -80,7 +80,11 @@ namespace LPP.Bot.Core
                 }
                 else if (message.Text == HandlerConstant.SeeMain || message.Text == "/byliner")
                 {
-                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new BylinerCommand(), cancellationToken); 
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new BylinerCommand(), cancellationToken);
+                }
+                else if (message.Text == "/users")
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationUsersCommand(), cancellationToken);
                 }
                 else if (userState.ServiceProvider.GetRequiredService<CurrentUserState>().UserState.State == HandlerConstant.AdministrationSendMessageCmd)
                 {

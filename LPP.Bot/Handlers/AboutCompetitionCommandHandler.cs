@@ -41,21 +41,10 @@ namespace LPP.Bot.Handlers
 
 Участники будут состязаться в 13 профессиях.";
 
-            // Путь к файлу изображения
-            var imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", "LOGO1.png");
-
-            if (File.Exists(imagePath))
-            {
-                using var stream = File.OpenRead(imagePath);
-
-                var photo = InputFile.FromStream(stream, "LOGO1.png");
-
-                await this.userState.BotClient.SendPhoto(
-                    chatId: this.userState.ChatId,
-                    photo,
-                    parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown
-                );
-            }
+            await userState.BotClient.SendSticker(
+                chatId: this.userState.ChatId,
+                sticker: "CAACAgIAAxkBAAIHymgmsmu42ozei3DcnpviKoqDyPYWAAJFaAAC1Bk4ScQExV2943heNgQ"
+            );
 
             var kbrd = new InlineKeyboardMarkup();
 
