@@ -29,13 +29,13 @@ namespace LPP.Bot.Handlers
             var text = "📹 *Медиа*\n\n" +
                "Добро пожаловать в раздел *«Медиа»*! Здесь вы можете:\n" +
                "• 📷 Посмотреть *фотографии*\n" +
-               "• 🔴 Подключиться к *онлайн трансляции*\n" +
+               "• 🔴 Подключиться к *онлайн трансляции* (21-22 мая)\n" +
                "• 🌐 Перейти в *медиараздел* на сайте";
 
             var keyboard = new InlineKeyboardMarkup(new[]
             {
                 new[] { InlineKeyboardButton.WithUrl("📷 Фотографии", "https://disk.yandex.ru/d/do0H4xF41Ie7qA") },
-                new[] { InlineKeyboardButton.WithUrl("🔴 Онлайн трансляция", "https://tdv.life/media") },
+                new[] { InlineKeyboardButton.WithUrl("🔴 Онлайн трансляция (21-22 мая)", "https://tdv.life/media") },
                 new[] { InlineKeyboardButton.WithUrl("🌐 Медиа на сайте", "https://tdv.life/media") }
             });
 
