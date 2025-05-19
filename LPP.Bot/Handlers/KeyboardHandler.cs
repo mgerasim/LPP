@@ -27,6 +27,10 @@ namespace LPP.Bot.Handlers
                                         },
                                         new KeyboardButton[]
                                         {
+                                            new KeyboardButton(HandlerConstant.ShowWeather),
+                                        },
+                                        new KeyboardButton[]
+                                        {
                                             new KeyboardButton(HandlerConstant.SeeMain),
                                         },
                                     };

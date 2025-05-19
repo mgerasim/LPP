@@ -45,5 +45,6 @@
         public static string ShowContacts { get; internal set; } = "☎️ Контакты";
         public static string SeeMain { get; internal set; } = "📍 Увидеть Хабаровск";
         public static string ShowParticipants { get; internal set; } = "👥 Участники";
+        public static string? ShowWeather { get; internal set; } = "🌡 Погода в Хабаровске";
     }
 }

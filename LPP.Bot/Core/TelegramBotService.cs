@@ -66,6 +66,10 @@ namespace LPP.Bot.Core
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new ParticipantsCommand(), cancellationToken);
                 }
+                else if (message.Text == "/weather" || message.Text == HandlerConstant.ShowWeather)
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new WeatherCommand(), cancellationToken);
+                }
                 else if (message.Text == HandlerConstant.AdminMenu)
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new AdministrationCommand(), cancellationToken);
