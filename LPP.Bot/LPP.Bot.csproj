@@ -29,6 +29,9 @@
     <None Update="images\ПРОГРАММА ЛПП_инет версия.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="images\ПРОГРАММА СЗГИ.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="images\Программа+СЗГИ+на+23-27.06.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

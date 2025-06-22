@@ -71,11 +71,11 @@ namespace LPP.Bot.Handlers
                     cancellationToken: CancellationToken.None);
 
 
-            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", "Программа+СЗГИ+на+23-27.06.pdf");
+            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", "ПРОГРАММА СЗГИ.pdf");
 
             using var stream = File.OpenRead(filePath);
 
-            var file = InputFile.FromStream(stream, "Программа+СЗГИ+на+23-27.06.pdf");
+            var file = InputFile.FromStream(stream, "ПРОГРАММА СЗГИ.pdf");
 
             await this.userState.BotClient.SendDocument(
                     chatId: this.userState.ChatId,
