@@ -103,7 +103,11 @@ namespace LPP.Bot.Core
             {
                 await botClient.AnswerCallbackQuery(update.CallbackQuery.Id);
 
-                if (update.CallbackQuery.Data == HandlerConstant.Byliner)
+                if (update.CallbackQuery.Data == HandlerConstant.Contacts)
+                {
+                    await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new ContactsCommand(), cancellationToken);
+                }
+                else if (update.CallbackQuery.Data == HandlerConstant.Byliner)
                 {
                     await userState.ServiceProvider.GetRequiredService<IMediator>().Send(new BylinerCommand(), cancellationToken);
                 }

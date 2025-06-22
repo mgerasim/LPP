@@ -77,37 +77,47 @@ namespace LPP.Bot.Handlers
             var keyboard = this.keyboardHandler.GetKeaboard();
 
             string hello = $@"
-** 👋 Добро пожаловать **  
+👋 *Добро пожаловать*
 
-Здесь Вы найдёте полезную информацию о региональном этапе конкурса профессионального мастерства «Лучший по профессии» и сможете ознакомиться с актуальными новостями состязаний.
+Вы находитесь в официальном Telegram-боте, созданном для участников Совета Заместителей Главных инженеров в  ООО «Транснефть - Дальний Восток».
+
+📌 Здесь вы найдете актуальную информацию о мероприятии:
+• Программа совещания 🗓️  
+• Важные новости и уведомления 📰  
+• Медиа-материалы 📷  
+• Контакты организаторов ☎️  
+• Ключевые места для посещения в городе 🗺️
 
 ";
 
+            string text = $@"Ознакомьтесь с разделами, используя меню ниже ⬇️";
 
-            await userState.BotClient.SendSticker(
+
+            await userState.BotClient.SendMessage(
                 chatId: this.userState.ChatId,
                 replyMarkup: keyboard,
-                sticker: "CAACAgIAAxkBAAIHymgmsmu42ozei3DcnpviKoqDyPYWAAJFaAAC1Bk4ScQExV2943heNgQ"
+                parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown,
+                text: hello
             );
 
             var kbrd = new InlineKeyboardMarkup();
 
-            if (!this.userState.User.IsBylinerReaded)
-            {
-                kbrd.AddNewRow(new[]
+            kbrd.AddNewRow(new[]
                 {
                     InlineKeyboardButton.WithCallbackData("🎤 Приветственное слово", HandlerConstant.Byliner)
                 });
-            }
 
             kbrd.AddNewRow(new[]
-                {
-                    InlineKeyboardButton.WithCallbackData("🏆 О конкурсе", HandlerConstant.AboutCompetition),
+            {
+                    InlineKeyboardButton.WithUrl("🌐 О нас", "https://tdv.life/about")
                 });
+
+
+            
 
             Message sentMessage = await this.userState.BotClient.SendMessage(
                     chatId: this.userState.ChatId,
-                    text: hello,
+                    text: text,
                     replyMarkup: kbrd,
                     parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown,
                     cancellationToken: CancellationToken.None);

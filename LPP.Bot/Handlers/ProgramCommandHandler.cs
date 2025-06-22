@@ -47,7 +47,7 @@ namespace LPP.Bot.Handlers
             }
             */
 
-            string programText = @"📅 **Программа конкурса** 
+            string programText = @"📅 **Программа мероприятия** 
 
 Актуальное расписание и полное содержание программы мероприятия доступны:
 
@@ -71,16 +71,16 @@ namespace LPP.Bot.Handlers
                     cancellationToken: CancellationToken.None);
 
 
-            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", "ПРОГРАММА ЛПП_инет версия.pdf");
+            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images", "Программа+СЗГИ+на+23-27.06.pdf");
 
             using var stream = File.OpenRead(filePath);
 
-            var file = InputFile.FromStream(stream, "ПРОГРАММА ЛПП_инет версия.pdf");
+            var file = InputFile.FromStream(stream, "Программа+СЗГИ+на+23-27.06.pdf");
 
             await this.userState.BotClient.SendDocument(
                     chatId: this.userState.ChatId,
                     document: file,
-                    caption: "Программа конкурса ЛПП 2025 также доступна на сайте: https://tdv.life/Events");
+                    caption: "Программа СЗГИ 2025 также доступна на сайте: https://tdv.life/Events");
         }
     }
 }

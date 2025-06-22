@@ -36,6 +36,8 @@
         public static string ShowSectionQuery { get; internal set; } = "showSectionQuery";
         public static string ExcelBookListQuery { get; internal set; } = "ExcelBookListQuery";
         public static string Byliner { get; internal set; } = "Byliner";
+
+        public static string Contacts { get; internal set; } = "ContactsQuery";
         public static string AboutCompetition { get; internal set; } = "AboutLpp";
         public static string? ShowNews { get; internal set; } = "📰 Новости";
         public static string ShowSchemes { get; internal set; } = "📜 Схемы конкурса";

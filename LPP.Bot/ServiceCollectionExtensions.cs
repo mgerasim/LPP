@@ -25,7 +25,6 @@ namespace LPP.Bot
             services.AddOptions<BotConfiguration>()
                             .BindConfiguration(nameof(BotConfiguration));
 
-            services.AddScoped<StartHandler>();
             services.AddScoped<KeyboardHandler>();
 
 

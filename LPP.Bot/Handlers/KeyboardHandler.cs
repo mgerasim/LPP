@@ -18,20 +18,20 @@ namespace LPP.Bot.Handlers
                                         new KeyboardButton[]
                                         {
                                             new KeyboardButton(HandlerConstant.ShowProgram),
-                                            new KeyboardButton(HandlerConstant.ShowParticipants),
+//                                            new KeyboardButton(HandlerConstant.ShowParticipants),
                                         },
                                         new KeyboardButton[]
                                         {
-                                            new KeyboardButton(HandlerConstant.ShowMedia),
+//                                            new KeyboardButton(HandlerConstant.ShowMedia),
                                             new KeyboardButton(HandlerConstant.ShowContacts),
                                         },
                                         new KeyboardButton[]
                                         {
-                                            new KeyboardButton(HandlerConstant.ShowWeather),
+                                            new KeyboardButton(HandlerConstant.SeeMain),
                                         },
                                         new KeyboardButton[]
                                         {
-                                            new KeyboardButton(HandlerConstant.SeeMain),
+                                            new KeyboardButton(HandlerConstant.ShowWeather),
                                         },
                                     };
 

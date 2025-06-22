@@ -25,17 +25,19 @@ namespace LPP.Bot.Handlers
         }
         public async Task Handle(ContactsCommand request, CancellationToken cancellationToken)
         {
-            var text = "📋 *Контакты*\n\n" +
-                  "Общая организация:\n" +
-                  "👤 *Начальник отдела кадров Юдаева Екатерина Сергеевна*\n" +
-                  "📞 +7 (914) 150-22-23\n" +
-                  "✉️ YudaevaES@dmn.transneft.ru\n\n" +
+            var text = @$"
+📞 **Контакты**
 
-                  "По вопросам проживания:\n" +
-                  "👤 *Начальник отдела социального развития Афанасьев Андрей Алексеевич*\n" +
-                  "📞 +7 (914) 422-40-33\n" +
-                  "✉️ AfanasievAA@dmn.transneft.ru\n\n"
-;
+По всем вопросам, связанным с общей организацией мероприятия, вы можете обратиться к следующим ответственным лицам:
+
+Начальник отдела социального развития Афанасьев Андрей Алексеевич
++7 (914) 422-40-33
+AfanasievAA@dmn.transneft.ru
+
+Начальник службы общественных коммуникаций Кривко Екатерина Сергеевна
++7 (924) 216-77-25
+KrivkoES@dmn.transneft.ru
+";
 
             var keyboard = new InlineKeyboardMarkup(new[]
             {
