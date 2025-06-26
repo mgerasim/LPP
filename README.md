@@ -8,6 +8,8 @@ scp bin/LPP.tar.gz root@flexess.ru:/home/root/apps/LPP/
 # на сервере
 cd /home/root/apps/LPP
 tar -xzvf /home/root/apps/LPP/LPP.tar.gz
+chmod u+x /home/root/apps/LPP/LPP
+sudo systemctl restart LPP.service
 
 # инстал€ци€
 
